@@ -1,0 +1,69 @@
+---
+title       : Developing Data Products course project
+subtitle    : slidify presentation of the shiny application
+author      : pfmg
+job         : 
+framework   : landslide        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+# Developing Data Products course project
+
+This is a slidify presentation of the shiny application that can be found here : <a href="https://pfmg.shinyapps.io/chick">ChickWeight explorer application</a>
+
+This presentations contains five slides (this one, and four others) : 
+
+1. Developing Data Products course project
+2. About the application
+3. Information about the dataset (1/2)
+4. Information about the dataset (2/2)
+5. Application documentation
+
+---
+
+## About the application
+
+The shiny application aim to graphically explore the "ChickWeight" dataset.
+
+These datas came from an experiment on the effect of diet on early growth of chicks.
+
+--- 
+
+## Information about the dataset (1/2)
+
+The "ChickWeight" dataset has 578 rows and 4 columns.
+
+```{r, echo=TRUE}
+d<-head(ChickWeight);
+print(d);
+```
+
+--- 
+
+## Information about the dataset (2/2)
+
+The 4 columns of the dataset contains these informations :
+
+* <b><u>weight</u></b> : a numeric vector giving the body weight of the chick (gm).
+
+* <b><u>Time</u></b> : a numeric vector giving the number of days since birth when the measurement was made.
+
+* <b><u>Chick</u></b> :an ordered factor with levels 18 < ... < 48 giving a unique identifier for the chick. The ordering of the levels groups chicks on the same diet together and orders them according to their final weight (lightest to heaviest) within diet.
+
+* <b><u>Diet</u></b> : a factor with levels 1, ..., 4 indicating which experimental diet the chick received.
+
+---
+
+## Application documentation
+
+The application is divided into two parts, a sidepanel and a mainpanel.
+
+The sidepanel is on the left, it is composed of two elements than you can interact with : 
+* a list of checkbox that represent the different diets for chicks.
+* two radio buttons that represent the type of graphic to render whit the selected datas.
+
+To display the datas, select the Diet checkboxes that you want to display, then select a type of graphic, then click on the submit button.
+Results are displayed in the main panel.
